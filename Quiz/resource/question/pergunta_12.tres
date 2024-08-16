@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Quiz/scripts/resource/res_question.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+question_info = "Qual é o nome da floresta que é o lar de uma grande diversidade de animais, como o macaco-prego e a onça-pintada?"
+type = 0
+options = [ "Caatinga", "Cerrado", "Amazônia", "Mata Atlântica" ]
+correct = "Amazônia"

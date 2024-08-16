@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Quiz/scripts/resource/res_question.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+question_info = "O que a Lei Áurea, assinada em 1888, determinou?"
+type = 0
+options = [ "Fim do trabalho infantil", "Abolição da industria", "Fim da escravidão no Brasil", "Criação da República" ]
+correct = "Fim da escravidão no Brasil"

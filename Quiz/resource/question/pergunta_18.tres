@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Quiz/scripts/resource/res_question.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+question_info = "Quem foi o navegador português que chegou às Índias contornando o Cabo da Boa Esperança em 1498?"
+type = 0
+options = [ "Cristóvão Colombo", "Vasco da Gama", "Fernão Mendes Pinto", "Pedro Álvares Cabral" ]
+correct = "Vasco da Gama"

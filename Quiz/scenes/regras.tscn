@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Quiz/scripts/level/regras.gd" type="Script" id=1]
+[ext_resource path="res://Quiz/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0431373, 0.0392157, 0.431373, 1 )
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Button" parent="Panel"]
+margin_left = 309.0
+margin_top = 402.0
+margin_right = 706.0
+margin_bottom = 471.0
+custom_fonts/font = SubResource( 1 )
+text = "JOGAR QUIZ!"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 44.0
+margin_top = 91.0
+margin_right = 997.0
+margin_bottom = 418.0
+custom_fonts/font = SubResource( 2 )
+text = "Olá, seja bem vindo ao Quiz!
+Neste modo de jogo, você irá responder várias perguntas 
+que abordam diversos temas de História e Geografia.
+
+Toda vez que você acertar uma pergunta, 
+você ganhará 5 pontos, as perguntas possuem um limite 
+de tempo de 15 segundos, 
+e apenas 1 das 4 alternativas é a resposta correta.
+
+"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Label2" type="Label" parent="Panel"]
+margin_left = 44.0
+margin_top = 298.0
+margin_right = 1500.0
+margin_bottom = 361.0
+custom_fonts/font = SubResource( 3 )
+text = "Aperte o botão para começar  o jogo e 
+tente conseguir a maior quantidade de pontos possível!"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_Button_pressed"]

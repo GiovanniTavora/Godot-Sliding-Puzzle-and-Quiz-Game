@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Quiz/scripts/resource/res_question.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+question_info = "Qual é o nome do maior rio do Brasil?"
+type = 0
+options = [ "Amazonas", "São Francisco", "Paraná", "Tocantins" ]
+correct = "São Francisco"

@@ -1,0 +1,241 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Quiz/theme_font.tres" type="Theme" id=1]
+[ext_resource path="res://Quiz/scripts/level/level_game.gd" type="Script" id=2]
+[ext_resource path="res://Quiz/resource/bd/bd_quiz_game.tres" type="Resource" id=3]
+[ext_resource path="res://Quiz/sound/incorrect.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Quiz/sound/correct.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Quiz/PressStart2P-Regular.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 39
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 25
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 22
+font_data = ExtResource( 6 )
+
+[node name="level_game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+bd_quiz = ExtResource( 3 )
+color_right = Color( 0.219608, 1, 0, 1 )
+color_wrong = Color( 0.992157, 0, 0, 1 )
+
+[node name="question_info" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -511.0
+margin_top = 6.0
+margin_right = 23.0
+margin_bottom = 480.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="txt_question" type="Label" parent="question_info"]
+margin_right = 534.0
+margin_bottom = 70.0
+rect_min_size = Vector2( 0, 70 )
+size_flags_vertical = 6
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="image_holder" type="Panel" parent="question_info"]
+margin_top = 74.0
+margin_right = 534.0
+margin_bottom = 474.0
+rect_min_size = Vector2( 0, 400 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="question_Image" type="TextureRect" parent="question_info/image_holder"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -142.0
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="question_video" type="VideoPlayer" parent="question_info/image_holder"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -144.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="question_audio" type="AudioStreamPlayer" parent="question_info/image_holder"]
+
+[node name="question_holder" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 26.0
+margin_top = -437.0
+margin_right = 423.0
+margin_bottom = -101.0
+custom_constants/separation = 20
+
+[node name="button_option_1" type="Button" parent="question_holder"]
+margin_right = 397.0
+margin_bottom = 69.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button_option_2" type="Button" parent="question_holder"]
+margin_top = 89.0
+margin_right = 397.0
+margin_bottom = 158.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button_option_3" type="Button" parent="question_holder"]
+margin_top = 178.0
+margin_right = 397.0
+margin_bottom = 247.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="button_option_4" type="Button" parent="question_holder"]
+margin_top = 267.0
+margin_right = 397.0
+margin_bottom = 336.0
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="game_over" type="Panel" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="txt_info" type="Label" parent="game_over"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -245.0
+margin_top = 17.0014
+margin_right = 245.0
+margin_bottom = 166.001
+custom_fonts/font = SubResource( 1 )
+text = "Parábens por 
+terminar o Quiz!"
+align = 1
+valign = 1
+
+[node name="txt_result" type="Label" parent="game_over"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -273.5
+margin_top = -152.5
+margin_right = 293.5
+margin_bottom = -3.5
+custom_fonts/font = SubResource( 2 )
+text = "Você acertou 0 de 0 perguntas!"
+align = 1
+valign = 1
+
+[node name="voltar_menu" type="Button" parent="game_over"]
+margin_left = 244.0
+margin_top = 348.0
+margin_right = 777.0
+margin_bottom = 474.0
+custom_fonts/font = SubResource( 3 )
+text = " Menu"
+
+[node name="txt_points" type="Label" parent="game_over"]
+margin_left = 388.0
+margin_top = 264.0
+margin_right = 595.0
+margin_bottom = 327.0
+custom_fonts/font = SubResource( 4 )
+text = "Pontuação:"
+
+[node name="audio_correct" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="audio_incorrect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="txt_timer" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 215.0
+margin_top = 15.0
+margin_right = 630.0
+margin_bottom = 98.0
+custom_colors/font_color = Color( 0.941176, 1, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "15"
+align = 1
+valign = 1
+
+[node name="timer" type="Timer" parent="."]
+autostart = true
+
+[node name="tempo" type="Label" parent="."]
+margin_left = 876.0
+margin_top = 9.0
+margin_right = 1010.0
+margin_bottom = 72.0
+custom_colors/font_color = Color( 0.945098, 1, 0, 1 )
+custom_fonts/font = SubResource( 7 )
+text = "Tempo:"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="pressed" from="game_over/voltar_menu" to="." method="_on_voltar_menu_pressed"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
